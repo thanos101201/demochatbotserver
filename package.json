@@ -1,18 +1,20 @@
 {
-  "name": "server",
+  "name": "chatserver",
   "version": "1.0.0",
-  "description": "Server for the demo chatbot.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev" : "nodemon server.js"
   },
   "author": "Pratiksingh Thakur",
   "license": "ISC",
+  "description": "",
   "dependencies": {
-    "axios": "^1.7.7",
     "cors": "^2.8.5",
-    "express": "^4.21.0",
-    "nodemon": "^3.1.4"
+    "express": "^4.21.1",
+    "mongoose": "^8.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   }
 }
