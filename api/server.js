@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-const get = require('./chat/get');
-const post = require('./chat/post');
+const get = require('../chat/get');
+const post = require('../chat/post');
 
 const app = express();
 
@@ -16,7 +16,7 @@ app.use(cors({
 }));
 
 app.use(express.json());
-require('./db/db');
+require('../db/db');
 app.get('/', async (req, res) => {
     await get(req, res);
 })
