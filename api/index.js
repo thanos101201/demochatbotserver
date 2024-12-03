@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-const get = require('../chat/get');
-const post = require('../chat/post');
+const chatRouter = require('../router/chat');
+const userRouter = require('../router/user');
 
 const app = express();
 
@@ -17,12 +17,12 @@ app.use(cors({
 
 app.use(express.json());
 require('../db/db');
-app.get('/', async (req, res) => {
-    await get(req, res);
+app.use('/user', async (req, res) => {
+    await userRouter(req, res);
 })
 
-app.post('/', async(req, res) => {
-    await post(req, res);
+app.use('/chat', async(req, res) => {
+    await chatRouter(req, res);
 });
 
 app.listen(3001, () => {

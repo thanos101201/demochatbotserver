@@ -1,7 +1,10 @@
-const chatModel = require('../models/chat');
+const chatModel = require('../../models/chat');
 
 const get = async (req, res) => {
-    await chatModel.find().then((resp1) => {
+    const email = req.query.email;
+    await chatModel.find({
+        email : email
+    }).then((resp1) => {
         res.status(200).send({
             'message': resp1
         })
